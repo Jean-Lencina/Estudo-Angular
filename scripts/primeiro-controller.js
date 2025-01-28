@@ -8,9 +8,16 @@ angular.module('aplicacao').controller('PrimeiroController', function($scope){
 
     $scope.finalizar = function(){
         $scope.iniciado = false;
-    }
+    };
 
-    $scope.iniciar = function(){
+    $scope.iniciar = function() {
         $scope.iniciado = true;
-    }
+    };
+
+    $scope.submeter = function(){
+        if ($scope.nome_aluno) {
+            $scope.alunos.push($scope.nome_aluno);
+            $scope.nome_aluno = ''; // Limpa o campo após adicionar
+        }
+    };
 });
