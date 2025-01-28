@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<title>Document</title>
+</head>
+<body class="container" ng-app="aplicacao">
+	<div class="head-inner">
+		<h1 style="text-align: center; color: blue;">
+			Bem vindo ao Curso de Desenvlvimento WEB com Angular JS
+		</h1>
+	</div>
+	<div ng-controller="PrimeiroController" class="well">
+		<p>Olá, {{nome}} seja bem-vindo!</p>
+		<div ng-class="{'card border-primary mb-3': iniciado, 'card border-danger mb-3': !iniciado}">
+			<div class="card-heading">
+				<h3 class="card-title">Situação do curso</h3>
+			</div>
+			<div class="card-body">
+				<p ng-show="iniciado">Curso em Andamento!</p>
+				<p ng-hide="iniciado">Curso Finalizado!</p>
+				<p ng-if="!iniciado">Aguarde o próximo curso!</p>
+			</div>
+		</div>
+		<br><br>
+		<li ng-repeat="aluno in alunos">
+			{{aluno}}
+		</li>
+		<br>
+		<button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">
+			Finalizar
+		</button>
+		<button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
+			Iniciar
+		</button>
+	</div>
+	<div class="container-fluid container-fixed-lg footer">
+		<div class="copyright sm-text-center">
+			<p class="small no-margin pull-left sm-pull-reset">
+				<span class="hint-text">Copyright @ 2025</span>
+			</p>
+		</div>
+	</div>
+	<script src="scripts/libs/angular.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/primeiro-controller.js"></script>
+</body>
+</html>

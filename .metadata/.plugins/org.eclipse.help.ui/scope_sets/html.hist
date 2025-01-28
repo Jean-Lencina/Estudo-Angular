@@ -1,0 +1,6 @@
+#Tue Jan 28 10:43:12 GMT-03:00 2025
+__DEFAULT__=false
+expression=html
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true
