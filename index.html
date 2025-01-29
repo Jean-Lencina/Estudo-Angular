@@ -24,12 +24,38 @@
 				<p ng-show="iniciado">Curso em Andamento!</p>
 				<p ng-hide="iniciado">Curso Finalizado!</p>
 				<p ng-if="!iniciado">Aguarde o próximo curso!</p>
+				<p>Preço do curso: {{valor | currency: 'R$ '}}</p>
+				<p>Última atualização do sistema: {{hoje | date: 'dd/MM/yyyy'}}</p>
 			</div>
 		</div>
+		<div>
+			<label>Definir Preço:</label>
+			<input type="number" id="valor" name="valor" ng-model="valor">
+		</div>
 		<br><br>
-		<li ng-repeat="aluno in alunos">
-			{{aluno}}
-		</li>
+		<h3>Alunos Cadastrados</h3>
+			<label>Filtrar por nome: </label>
+			<input type="text" ng-model="filtro">
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<tr>
+				    	<th ng-click="ordenarPorNome()">
+					    	Nome
+				    	</th>
+						<th ng-click="ordenarPorIdade()">
+					    	Idade
+				    	</th>
+				  	</tr>
+					<tr ng-repeat="aluno in alunos | filter : filtro">
+				    	<td>
+				    		{{aluno.nome}}
+				    	</td>
+						<td>
+				    		{{aluno.idade}}
+				    	</td>
+					</tr>
+				</table>
+			</div>
 		<br>
 		<button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">
 			Finalizar
@@ -43,13 +69,21 @@
 				<div class="col-md-4">
 					<div class="form-group form-group-default">
 						<label>Nome</label>
-						<input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno">
+						<input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno" ng-readonly="!iniciado" ng-minlength="3">
+						<br>
 					</div>
 				</div>
+				<div class="col-md-4">
+					<div class="form-group form-group-default">
+						<label>Idade</label>
+						<input class="form-control" type="number" id="idade_aluno" ng-model="idade_aluno" ng-readonly="!iniciado">
+						<br>
+					</div>
+				</div>	
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<button ng-click="submeter()" class="btn btn-primary">
+					<button ng-click="submeter()" class="btn btn-primary"  ng-disabled="!iniciado">
 						Adicionar
 					</button>
 				</div>
@@ -64,6 +98,7 @@
 		</div>
 	</div>
 	<script src="scripts/libs/angular.js"></script>
+	<script src="scripts/libs/ngResource.js"></script>
 	<script src="scripts/app.js"></script>
 	<script src="scripts/primeiro-controller.js"></script>
 </body>
