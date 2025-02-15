@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="aplicacao">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE-edge">
-	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <title>Document</title>
 </head>
 <body class="container">
-	<div class="head-inner">
-		<h1 style="text-align: center; color: blue;">
-			Bem vindo ao Curso de Desenvolvimento WEB com Angular JS
-		</h1>
-	</div>
-	<div ui-view></div>
-	<div class="container-fluid container-fixed-lg footer">
-		<div class="copyright sm-text-center">
-			<p class="small no-margin pull-left sm-pull-reset">
-				<span class="hint-text">Copyright @ 2025</span>
-			</p>
-		</div>
-	</div>
-	<script src="scripts/libs/angular.js"></script>
-	<script src="scripts/libs/ngResource.js"></script>
-	<script src="scripts/libs/angular-ui-router.js"></script>
-	<script src="scripts/app.js"></script>
-	<script src="scripts/listagem-de-alunos.js"></script>
-	<script src="scripts/nova-inscricao-controller.js"></script>
-	<script src="scripts/previsao-tempo-controller.js"></script>
-	<script src="scripts/alunos-collection-service.js"></script>
+    <div class="head-inner">
+        <h1 style="text-align: center; color: blue;">
+            Bem vindo ao Curso de Desenvolvimento WEB com Angular JS
+        </h1>
+    </div>
+	<nav ng-controller="MenuController">
+			<ul>
+				<li><a ng-click="irInicio()">Início</a></li>
+				<li><a ng-click="irListagem()">Alunos</a></li>
+				<li><a ng-click="irCadastro()">Cadastro</a></li>
+				<li><a ng-click="irPrevisao()">Previsão do Tempo</a></li>
+			</ul>
+	</nav>	
+    <div ui-view></div>
+    <div class="container-fluid container-fixed-lg footer">
+        <div class="copyright sm-text-center">
+            <p class="small no-margin pull-left sm-pull-reset">
+                <span class="hint-text">Copyright @ 2025</span>
+            </p>
+        </div>
+    </div>
+    <script src="scripts/libs/angular.js"></script>
+<script src="scripts/libs/ngResource.js"></script>
+<script src="scripts/libs/angular-ui-router.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/menu-controller.js"></script>
+<script src="scripts/listagem-de-alunos.js"></script>
+<script src="scripts/nova-inscricao-controller.js"></script>
+<script src="scripts/previsao-tempo-controller.js"></script>
+<script src="scripts/alunos-collection-service.js"></script>
+
 </body>
 </html>
