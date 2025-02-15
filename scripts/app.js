@@ -1,10 +1,10 @@
 var app = angular.module('aplicacao', ['ngResource', 'ui.router'])
-    .config(function($stateprovider){
-        $stateprovider
+    .config(function($stateProvider){
+        $stateProvider
             .state('aplicacao_inicial', {
             name: 'aplicacao_inicial',
             url: '/inicial.html',
-            templateUrl: 'veiws/inicial.html'
+            templateUrl: 'views/inicial.html'
     }).state('aplicacao_listagem',{
         name: 'aplicacao_listagem', 
         url: '/listagem.html',
@@ -20,6 +20,6 @@ var app = angular.module('aplicacao', ['ngResource', 'ui.router'])
     })
     });
 
-app.run(function($rootscope, $state){
+app.run(function($rootScope, $state){
     $state.go('aplicacao_inicial')
 });
