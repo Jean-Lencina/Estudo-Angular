@@ -13,8 +13,8 @@ var app = angular.module('aplicacao', ['ngResource', 'ui.router'])
             })
             .state('aplicacao_cadastro', {
                 name: 'aplicacao_cadastro',
-                url: '/cadastro.html',
-                templateUrl: 'views/cadastro-alunos.html'
+                url: '/cadastro_aluno.html',
+                templateUrl: 'views/cadastro-aluno.html'
             })
             .state('aplicacao_previsao', {
                 name: 'aplicacao_previsao',

@@ -8,7 +8,7 @@ angular.module('aplicacao').controller('MenuController', function($scope, $state
     $scope.irListagem = function() {
         $state.go("aplicacao_listagem");
     };
-    $scope.irCadastro = function() {
+    $scope.irCadastroAluno = function() {
         $state.go("aplicacao_cadastro");
     };
         $scope.irPrevisao = function() {
