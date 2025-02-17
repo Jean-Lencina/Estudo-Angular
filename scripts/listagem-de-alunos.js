@@ -3,6 +3,7 @@ angular.module('aplicacao').controller('ListagemAlunos', function($scope, $filte
     var nome = 'Lá Lá Lá';
 
     $scope.iniciado = true;
+    $scope.cadastrar = false;
 
     //$scope.alunos = ['Aluno 1', 'Aluno 2', 'Aluno 3'];
     $scope.alunos = AlunosCollectionService.getAlunos();
@@ -25,6 +26,10 @@ angular.module('aplicacao').controller('ListagemAlunos', function($scope, $filte
     $scope.ordenarPorIdade = function(){
         AlunosCollectionService.ordenarPorIdade();
         $scope.alunos = AlunosCollectionService.getAlunos();
+    }
+
+    $scope.exibeCadastro = function(){
+        $scope.cadastrar = !$scope.cadastrar;
     }
 
     //$scope.submeter = function(){

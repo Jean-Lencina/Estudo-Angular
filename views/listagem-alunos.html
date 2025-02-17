@@ -47,4 +47,20 @@
     <button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
         Iniciar
     </button>
+
+
+    <br><br>
+    <button ng-click="exibeCadastro()" class="btn btn-primary">
+        <span ng-hide="cadastrar">Cadastrar</span>
+        <span ng-show="cadastrar">Ocultar</span>
+    </button>
+    <br><br>    
+    <div class="panel panel-primary" ng-if="cadastrar">
+        <div class="panel-heading">
+            <h3 class="panel-title">Novo Cadastro</h3>
+        </div>
+        <div class="panel-body">
+            <cadastro-aluno></cadastro-aluno>
+        </div>
+    </div>
 </div>
