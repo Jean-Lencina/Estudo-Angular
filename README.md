@@ -1,6 +1,9 @@
-##Diagrama de classes
+# API RestFul
+Api Restful Java
 
-'''mermade
+## Diagrama de classes
+
+```mermaid
 
 classDiagram
     class User {
@@ -33,9 +36,8 @@ classDiagram
         +String description
     }
 
-    User "1" --> "1" Account
-    User "1" --> "*" Feature
-    User "1" --> "1" Card
-    User "1" --> "*" News
-
-    '''
+    User "1" *-- "1" Account
+    User "1" *-- "N" Feature
+    User "1" *-- "1" Card
+    User "1" *-- "N" News
+```
